@@ -115,7 +115,7 @@
             "clientblacklist.wire.com"
         ]
     },
-    "is_password_protected_guest_link_enabled": false,
+    "is_password_protected_guest_link_enabled": true,
     "url_rss_release_notes": "https://medium.com/feed/wire-news/tagged/android",
     "team_app_lock": false,
     "team_app_lock_timeout": 60,
