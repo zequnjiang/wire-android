@@ -41,7 +41,7 @@ import com.wire.kalium.logic.data.message.MessageContent.Asset
 import com.wire.kalium.logic.data.user.AssetId
 import com.wire.kalium.logic.data.user.SelfUser
 import com.wire.kalium.logic.data.user.User
-import com.wire.kalium.logic.sync.receiver.conversation.message.hasValidRemoteData
+import com.wire.kalium.logic.data.message.hasValidRemoteData
 import com.wire.kalium.logic.util.isGreaterThan
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.collections.immutable.toPersistentMap
