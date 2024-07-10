@@ -531,6 +531,7 @@
     <string name="user_profile_new_account_text">New Team or Account</string>
     <string name="user_profile_qr_code">Open QR Code</string>
     <string name="user_profile_qr_code_title">Share Profile</string>
+    <string name="user_profile_qr_code_share_link">Share Profile Link</string>
     <string name="user_profile_qr_code_description">Share your profile to connect easily with other people. You must still accept a connection request before you two can start communicating.</string>
     <string name="user_profile_details_tab">Details</string>
     <string name="user_profile_devices_tab">Devices</string>
