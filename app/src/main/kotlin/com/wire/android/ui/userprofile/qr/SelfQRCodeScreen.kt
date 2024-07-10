@@ -38,6 +38,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.lightspark.composeqr.DotShape
 import com.lightspark.composeqr.QrCodeView
@@ -83,7 +84,8 @@ private fun SelfQRCodeContent(
         topBar = {
             WireCenterAlignedTopAppBar(
                 title = stringResource(id = R.string.user_profile_qr_code_title),
-                onNavigationPressed = onBackClick
+                onNavigationPressed = onBackClick,
+                elevation = 0.dp
             )
         }
     ) { internalPadding ->
@@ -94,9 +96,10 @@ private fun SelfQRCodeContent(
                 .padding(internalPadding),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            VerticalSpace.x24()
             Column(
                 modifier = Modifier
-                    .padding(horizontal = dimensions().spacing16x, vertical = dimensions().spacing48x)
+                    .padding(horizontal = dimensions().spacing16x)
                     .clip(RoundedCornerShape(dimensions().spacing8x))
                     .fillMaxWidth()
                     .background(Color.White),
@@ -147,6 +150,13 @@ private fun SelfQRCodeContent(
                 )
                 VerticalSpace.x16()
             }
+            Text(
+                modifier = Modifier.padding(horizontal = dimensions().spacing24x, vertical = dimensions().spacing16x),
+                text = stringResource(id = R.string.user_profile_qr_code_description),
+                style = MaterialTheme.wireTypography.body01,
+                textAlign = TextAlign.Center,
+                color = colorsScheme().secondaryText
+            )
         }
     }
 
