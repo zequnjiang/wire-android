@@ -423,6 +423,7 @@ private fun TopBarCollapsing(
                 connection = targetState.connectionState,
                 isProteusVerified = targetState.isProteusVerified,
                 isMLSVerified = targetState.isMLSVerified,
+                onQrCodeClick = null,
             )
             if (state.isUnderLegalHold) {
                 LegalHoldSubjectBanner(

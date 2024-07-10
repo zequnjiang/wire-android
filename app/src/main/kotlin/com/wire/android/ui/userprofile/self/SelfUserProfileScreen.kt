@@ -232,7 +232,8 @@ private fun SelfUserProfileContent(
                             userName = userName,
                             teamName = teamName,
                             onUserProfileClick = onChangeUserProfilePicture,
-                            editableState = EditableState.IsEditable(onEditClick)
+                            editableState = EditableState.IsEditable(onEditClick),
+                            onQrCodeClick = onQrCodeClick
                         )
                     }
                     if (state.legalHoldStatus != LegalHoldUIState.None) {
@@ -286,7 +287,6 @@ private fun SelfUserProfileContent(
                         )
                     }
                 }
-                QrCodeButton(onQrCodeClick)
                 NewTeamButton(onAddAccountClick, isUserInCall, context)
             }
             ChangeStatusDialogContent(
@@ -382,26 +382,6 @@ private fun CurrentSelfUserStatus(
 @Composable
 private fun OtherAccountsHeader() {
     FolderHeader(stringResource(id = R.string.user_profile_other_accs))
-}
-
-@Composable
-private fun QrCodeButton(
-    onAddAccountClick: () -> Unit
-) {
-    Surface(shadowElevation = dimensions().spacing8x) {
-        WirePrimaryButton(
-            modifier = Modifier
-                .background(MaterialTheme.colorScheme.background)
-                .padding(horizontal = dimensions().spacing16x)
-                .testTag("QR code"),
-            text = stringResource(R.string.user_profile_qr_code),
-            onClick = remember {
-                {
-                    onAddAccountClick()
-                }
-            }
-        )
-    }
 }
 
 @Composable
