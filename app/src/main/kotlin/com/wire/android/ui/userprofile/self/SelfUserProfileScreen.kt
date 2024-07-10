@@ -78,6 +78,7 @@ import com.wire.android.ui.common.topappbar.WireCenterAlignedTopAppBar
 import com.wire.android.ui.common.visbility.rememberVisibilityState
 import com.wire.android.ui.destinations.AppSettingsScreenDestination
 import com.wire.android.ui.destinations.AvatarPickerScreenDestination
+import com.wire.android.ui.destinations.SelfQRCodeScreenDestination
 import com.wire.android.ui.destinations.WelcomeScreenDestination
 import com.wire.android.ui.home.conversations.search.HighlightName
 import com.wire.android.ui.home.conversations.search.HighlightSubtitle
@@ -124,6 +125,7 @@ fun SelfUserProfileScreen(
         onEditClick = { navigator.navigate(NavigationCommand(AppSettingsScreenDestination)) },
         onStatusClicked = viewModelSelf::changeStatusClick,
         onAddAccountClick = { navigator.navigate(NavigationCommand(WelcomeScreenDestination)) },
+        onQrCodeClick = { navigator.navigate(NavigationCommand(SelfQRCodeScreenDestination)) },
         dismissStatusDialog = viewModelSelf::dismissStatusDialog,
         onStatusChange = viewModelSelf::changeStatus,
         onNotShowRationaleAgainChange = viewModelSelf::dialogCheckBoxStateChanged,
@@ -173,6 +175,7 @@ private fun SelfUserProfileContent(
     onEditClick: () -> Unit = {},
     onStatusClicked: (UserAvailabilityStatus) -> Unit = {},
     onAddAccountClick: () -> Unit = {},
+    onQrCodeClick: () -> Unit = {},
     dismissStatusDialog: () -> Unit = {},
     onStatusChange: (UserAvailabilityStatus) -> Unit = {},
     onNotShowRationaleAgainChange: (Boolean) -> Unit = {},
@@ -180,7 +183,7 @@ private fun SelfUserProfileContent(
     onLegalHoldAcceptClick: () -> Unit = {},
     onLegalHoldLearnMoreClick: () -> Unit = {},
     onOtherAccountClick: (UserId) -> Unit = {},
-    isUserInCall: () -> Boolean
+    isUserInCall: () -> Boolean,
 ) {
     val snackbarHostState = LocalSnackbarHostState.current
 
@@ -236,12 +239,15 @@ private fun SelfUserProfileContent(
                         stickyHeader {
                             Box(
                                 contentAlignment = Alignment.Center,
-                                modifier = Modifier.fillMaxWidth().padding(top = dimensions().spacing8x)
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(top = dimensions().spacing8x)
                             ) {
                                 when (state.legalHoldStatus) {
                                     LegalHoldUIState.Active -> LegalHoldSubjectBanner(onLegalHoldLearnMoreClick)
                                     LegalHoldUIState.Pending -> LegalHoldPendingBanner(onLegalHoldAcceptClick)
-                                    LegalHoldUIState.None -> { /* no banner */ }
+                                    LegalHoldUIState.None -> { /* no banner */
+                                    }
                                 }
                             }
                         }
@@ -280,6 +286,7 @@ private fun SelfUserProfileContent(
                         )
                     }
                 }
+                QrCodeButton(onQrCodeClick)
                 NewTeamButton(onAddAccountClick, isUserInCall, context)
             }
             ChangeStatusDialogContent(
@@ -375,6 +382,26 @@ private fun CurrentSelfUserStatus(
 @Composable
 private fun OtherAccountsHeader() {
     FolderHeader(stringResource(id = R.string.user_profile_other_accs))
+}
+
+@Composable
+private fun QrCodeButton(
+    onAddAccountClick: () -> Unit
+) {
+    Surface(shadowElevation = dimensions().spacing8x) {
+        WirePrimaryButton(
+            modifier = Modifier
+                .background(MaterialTheme.colorScheme.background)
+                .padding(horizontal = dimensions().spacing16x)
+                .testTag("QR code"),
+            text = stringResource(R.string.user_profile_qr_code),
+            onClick = remember {
+                {
+                    onAddAccountClick()
+                }
+            }
+        )
+    }
 }
 
 @Composable
