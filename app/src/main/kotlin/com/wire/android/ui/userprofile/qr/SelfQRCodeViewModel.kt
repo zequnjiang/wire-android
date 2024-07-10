@@ -20,9 +20,11 @@ package com.wire.android.ui.userprofile.qr
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wire.android.di.CurrentAccount
+import com.wire.android.ui.navArgs
 import com.wire.kalium.logic.data.user.UserId
 import com.wire.kalium.logic.feature.user.SelfServerConfigUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -31,11 +33,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SelfQRCodeViewModel @Inject constructor(
+    savedStateHandle: SavedStateHandle,
     @CurrentAccount private val selfUserId: UserId,
     private val selfServerLinks: SelfServerConfigUseCase
 ) : ViewModel() {
 
-    var selfQRCodeState by mutableStateOf(SelfQRCodeState(selfUserId))
+    private val selfQrCodeNavArgs: SelfQrCodeNavArgs = savedStateHandle.navArgs()
+    var selfQRCodeState by mutableStateOf(SelfQRCodeState(selfUserId, fullName = selfQrCodeNavArgs.handle))
         private set
 
     init {

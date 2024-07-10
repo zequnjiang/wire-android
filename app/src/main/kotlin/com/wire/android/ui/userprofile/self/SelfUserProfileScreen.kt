@@ -125,7 +125,7 @@ fun SelfUserProfileScreen(
         onEditClick = { navigator.navigate(NavigationCommand(AppSettingsScreenDestination)) },
         onStatusClicked = viewModelSelf::changeStatusClick,
         onAddAccountClick = { navigator.navigate(NavigationCommand(WelcomeScreenDestination)) },
-        onQrCodeClick = { navigator.navigate(NavigationCommand(SelfQRCodeScreenDestination)) },
+        onQrCodeClick = { navigator.navigate(NavigationCommand(SelfQRCodeScreenDestination(viewModelSelf.userProfileState.userName))) },
         dismissStatusDialog = viewModelSelf::dismissStatusDialog,
         onStatusChange = viewModelSelf::changeStatus,
         onNotShowRationaleAgainChange = viewModelSelf::dialogCheckBoxStateChanged,

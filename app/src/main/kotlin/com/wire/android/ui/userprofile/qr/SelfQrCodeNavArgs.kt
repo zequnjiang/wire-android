@@ -17,13 +17,10 @@
  */
 package com.wire.android.ui.userprofile.qr
 
-import com.wire.android.model.ImageAsset.UserAvatarAsset
-import com.wire.kalium.logic.data.user.UserId
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-data class SelfQRCodeState(
-    val userId: UserId,
-    val avatarAsset: UserAvatarAsset? = null,
-    val fullName: String = "",
-    val userProfileLink: String = "",
-    val hasError: Boolean = false
-)
+@Parcelize
+data class SelfQrCodeNavArgs(
+    val handle: String = "",
+) : Parcelable

@@ -151,6 +151,7 @@ data class WireDimensions(
     val spacing100x: Dp,
     val spacing120x: Dp,
     val spacing200x: Dp,
+    val spacing300x: Dp,
     // Corners
     val corner2x: Dp,
     val corner4x: Dp,
@@ -346,6 +347,7 @@ private val DefaultPhonePortraitWireDimensions: WireDimensions = WireDimensions(
     importedMediaAssetSize = 120.dp,
     typingIndicatorHeight = 24.dp,
     legalHoldBannerMinHeight = 26.dp,
+    spacing300x = 300.dp
 )
 
 private val DefaultPhoneLandscapeWireDimensions: WireDimensions = DefaultPhonePortraitWireDimensions
