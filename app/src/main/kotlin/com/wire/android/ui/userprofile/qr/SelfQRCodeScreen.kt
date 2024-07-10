@@ -28,7 +28,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
-import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,6 +37,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.lightspark.composeqr.DotShape
 import com.lightspark.composeqr.QrCodeView
@@ -50,6 +52,8 @@ import com.wire.android.ui.common.scaffold.WireScaffold
 import com.wire.android.ui.common.spacers.VerticalSpace
 import com.wire.android.ui.common.topappbar.WireCenterAlignedTopAppBar
 import com.wire.android.ui.theme.WireTheme
+import com.wire.android.ui.theme.wireTypography
+import com.wire.android.util.ifNotEmpty
 import com.wire.android.util.ui.PreviewMultipleThemes
 import com.wire.kalium.logic.data.user.UserId
 
@@ -70,7 +74,6 @@ fun SelfQRCodeScreen(
     SelfQRCodeContent(viewModel.selfQRCodeState, navigator::navigateBack)
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun SelfQRCodeContent(
     state: SelfQRCodeState,
@@ -100,6 +103,7 @@ private fun SelfQRCodeContent(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 VerticalSpace.x16()
+                // Generated QR code
                 QrCodeView(
                     data = state.userProfileLink,
                     modifier = Modifier.size(dimensions().spacing300x),
@@ -123,8 +127,25 @@ private fun SelfQRCodeContent(
                             contentDescription = null
                         )
                     }
-
                 }
+                // Handle
+                VerticalSpace.x16()
+                Text(
+                    text = state.handle.ifNotEmpty { "@${state.handle}" },
+                    style = MaterialTheme.wireTypography.title01,
+                    color = Color.Black
+                )
+
+                // Full Link
+                VerticalSpace.x16()
+                Text(
+                    modifier = Modifier.padding(horizontal = dimensions().spacing24x),
+                    text = state.userProfileLink,
+                    style = MaterialTheme.wireTypography.subline01,
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
+                )
+                VerticalSpace.x16()
             }
         }
     }
@@ -137,7 +158,9 @@ fun PreviewSelfQRCodeContent() {
     WireTheme {
         SelfQRCodeContent(
             SelfQRCodeState(
-                userId = UserId("userId", "wire.com")
+                userId = UserId("userId", "wire.com"),
+                handle = "userid",
+                userProfileLink = "https://account.wire.com/user-profile/?id=aaaaaaa-222-3333-4444-55555555"
             )
         )
     }

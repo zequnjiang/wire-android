@@ -23,7 +23,7 @@ import com.wire.kalium.logic.data.user.UserId
 data class SelfQRCodeState(
     val userId: UserId,
     val avatarAsset: UserAvatarAsset? = null,
-    val fullName: String = "",
+    val handle: String = "",
     val userProfileLink: String = "",
     val hasError: Boolean = false
 )

@@ -39,7 +39,7 @@ class SelfQRCodeViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val selfQrCodeNavArgs: SelfQrCodeNavArgs = savedStateHandle.navArgs()
-    var selfQRCodeState by mutableStateOf(SelfQRCodeState(selfUserId, fullName = selfQrCodeNavArgs.handle))
+    var selfQRCodeState by mutableStateOf(SelfQRCodeState(selfUserId, handle = selfQrCodeNavArgs.handle))
         private set
 
     init {
