@@ -22,17 +22,15 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.lightspark.composeqr.DotShape
-import com.lightspark.composeqr.QrCodeColors
 import com.lightspark.composeqr.QrCodeView
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
@@ -66,23 +64,19 @@ private fun SelfQRCodeContent(state: SelfQRCodeState) {
     QrCodeView(
         data = state.userProfileLink,
         modifier = Modifier.size(dimensions().spacing200x),
-        colors = QrCodeColors(
-            background = colorsScheme().primary,
-            foreground = colorsScheme().onPrimary
-        ),
-        dotShape = DotShape.Circle
+        dotShape = DotShape.Square
     ) {
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
                 .fillMaxSize()
-                .clip(RoundedCornerShape(dimensions().spacing8x))
-                .background(Color.White)
+                .clip(CircleShape)
+                .background(colorsScheme().primary)
                 .padding(dimensions().spacing8x)
-                .clip(RoundedCornerShape(dimensions().spacing8x))
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_wire_logo),
+                modifier = Modifier.background(color = colorsScheme().primary),
                 contentDescription = null
             )
         }
