@@ -100,7 +100,7 @@ fun UserProfileInfo(
     delayToShowPlaceholderIfNoAsset: Duration = 200.milliseconds,
     isProteusVerified: Boolean = false,
     isMLSVerified: Boolean = false,
-    onQrCodeClick: (() -> Unit)?= null,
+    onQrCodeClick: (() -> Unit)? = null,
 ) {
     Column(
         horizontalAlignment = CenterHorizontally,
