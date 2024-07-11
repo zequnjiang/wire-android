@@ -184,7 +184,8 @@ private fun ImportMediaAuthenticatedContent(
         )
 
         val context = LocalContext.current
-        LaunchedEffect(importMediaViewModel.importMediaState.importedText) {
+        // TODO: this looks fishy, try to cleanup later
+        LaunchedEffect(importMediaViewModel.importMediaState.isImportingData()) {
             if (importMediaViewModel.importMediaState.importedText.isNullOrBlank()) {
                 context.getActivity()
                     ?.let { importMediaViewModel.handleReceivedDataFromSharingIntent(it) }
