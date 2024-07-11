@@ -17,9 +17,14 @@
  */
 package com.wire.android.ui.userprofile.qr
 
+import android.content.Context
+import android.graphics.Bitmap
+import android.net.Uri
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.core.net.toUri
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -28,12 +33,17 @@ import com.wire.android.ui.navArgs
 import com.wire.kalium.logic.data.user.UserId
 import com.wire.kalium.logic.feature.user.SelfServerConfigUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.File
+import java.io.FileOutputStream
 import javax.inject.Inject
 
 @HiltViewModel
 class SelfQRCodeViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
+    private val context: Context,
     @CurrentAccount private val selfUserId: UserId,
     private val selfServerLinks: SelfServerConfigUseCase
 ) : ViewModel() {
@@ -46,6 +56,29 @@ class SelfQRCodeViewModel @Inject constructor(
         viewModelScope.launch {
             getServerLinks()
         }
+    }
+
+    suspend fun shareQRAsset(bitmap: Bitmap): Uri {
+        val qrImageFile = tempQRUri(context)
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                context.contentResolver.openFileDescriptor(qrImageFile, "rwt")?.use { fileDescriptor ->
+                    FileOutputStream(fileDescriptor.fileDescriptor).use { fileOutputStream ->
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, QR_QUALITY_COMPRESSION, fileOutputStream)
+                        fileOutputStream.flush()
+                    }.also {
+                        Log.d("SelfQRCodeViewModel", "Image written to: $qrImageFile")
+                    }
+                }
+            }
+        }.join()
+        return qrImageFile
+    }
+
+    private fun tempQRUri(context: Context): Uri = run {
+        val tempFile = File.createTempFile("temp_qr", ".jpg", context.cacheDir)
+        tempFile.deleteOnExit()
+        tempFile.toUri()
     }
 
     private suspend fun getServerLinks() {
@@ -66,6 +99,7 @@ class SelfQRCodeViewModel @Inject constructor(
     companion object {
         const val BASE_USER_PROFILE_URL = "%s/user-profile/?id=%s"
         const val DIRECT_BASE_USER_PROFILE_URL = "wire://user/%s"
+        const val QR_QUALITY_COMPRESSION = 80
     }
 
 }

@@ -17,6 +17,9 @@
  */
 package com.wire.android.ui.userprofile.qr
 
+import android.annotation.SuppressLint
+import android.graphics.Bitmap
+import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -32,16 +35,22 @@ import androidx.compose.material.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asAndroidBitmap
+import androidx.compose.ui.graphics.layer.drawLayer
+import androidx.compose.ui.graphics.rememberGraphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.core.net.toUri
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.lightspark.composeqr.DotShape
 import com.lightspark.composeqr.QrCodeView
@@ -61,6 +70,7 @@ import com.wire.android.ui.theme.wireTypography
 import com.wire.android.util.ifNotEmpty
 import com.wire.android.util.ui.PreviewMultipleThemes
 import com.wire.kalium.logic.data.user.UserId
+import kotlinx.coroutines.launch
 
 @RootNavGraph
 @Destination(
@@ -76,14 +86,22 @@ fun SelfQRCodeScreen(
     if (viewModel.selfQRCodeState.hasError) {
         navigator.navigateBack()
     }
-    SelfQRCodeContent(viewModel.selfQRCodeState, navigator::navigateBack)
+    SelfQRCodeContent(
+        viewModel.selfQRCodeState,
+        viewModel::shareQRAsset,
+        navigator::navigateBack
+    )
 }
 
 @Composable
 private fun SelfQRCodeContent(
     state: SelfQRCodeState,
+    shareQRAssetClick: suspend (Bitmap) -> Uri,
     onBackClick: () -> Unit = {}
 ) {
+    val coroutineScope = rememberCoroutineScope()
+    val graphicsLayer = rememberGraphicsLayer()
+    val context = LocalContext.current
     WireScaffold(
         topBar = {
             WireCenterAlignedTopAppBar(
@@ -106,6 +124,12 @@ private fun SelfQRCodeContent(
                     .padding(horizontal = dimensions().spacing16x)
                     .clip(RoundedCornerShape(dimensions().spacing8x))
                     .fillMaxWidth()
+                    .drawWithContent {
+                        graphicsLayer.record {
+                            this@drawWithContent.drawContent()
+                        }
+                        drawLayer(graphicsLayer)
+                    }
                     .background(Color.White),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -163,8 +187,30 @@ private fun SelfQRCodeContent(
             )
             Spacer(modifier = Modifier.weight(1f))
             ShareLinkButton(state.userProfileShareableLink)
+            VerticalSpace.x8()
+            ShareQRCodeButton {
+                coroutineScope.launch {
+                    val bitmap = graphicsLayer.toImageBitmap()
+                    val qrUri = shareQRAssetClick(bitmap.asAndroidBitmap())
+                    context.shareQRToProfile(qrUri)
+                }
+            }
         }
     }
+}
+
+@SuppressLint("ComposeModifierMissing")
+@Composable
+fun ShareQRCodeButton(shareQRAssetClick: () -> Unit) {
+    WirePrimaryButton(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.background)
+            .padding(horizontal = dimensions().spacing16x)
+            .testTag("Share QR link"),
+        text = stringResource(R.string.user_profile_qr_code_share_image_link),
+        onClick = shareQRAssetClick
+    )
 }
 
 @Composable
@@ -174,7 +220,7 @@ private fun ShareLinkButton(selfProfileUrl: String) {
         modifier = Modifier
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.background)
-            .padding(dimensions().spacing16x)
+            .padding(horizontal = dimensions().spacing16x)
             .testTag("Share link"),
         text = stringResource(R.string.user_profile_qr_code_share_link),
         onClick = { context.shareLinkToProfile(selfProfileUrl) }
@@ -190,7 +236,10 @@ fun PreviewSelfQRCodeContent() {
                 userId = UserId("userId", "wire.com"),
                 handle = "userid",
                 userProfileLink = "https://account.wire.com/user-profile/?id=aaaaaaa-222-3333-4444-55555555"
-            )
+            ),
+            {
+                "".toUri()
+            }
         )
     }
 }
