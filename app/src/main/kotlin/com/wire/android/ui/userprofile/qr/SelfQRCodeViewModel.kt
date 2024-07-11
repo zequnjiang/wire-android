@@ -57,11 +57,15 @@ class SelfQRCodeViewModel @Inject constructor(
     }
 
     private fun generateSelfUserUrl(accountsUrl: String): SelfQRCodeState {
-        return selfQRCodeState.copy(userProfileLink = String.format(BASE_USER_PROFILE_URL, accountsUrl, selfUserId.value))
+        return selfQRCodeState.copy(
+            userProfileLink = String.format(DIRECT_BASE_USER_PROFILE_URL, selfUserId.value),
+            userProfileShareableLink = String.format(BASE_USER_PROFILE_URL, accountsUrl, selfUserId.value)
+        )
     }
 
     companion object {
         const val BASE_USER_PROFILE_URL = "%s/user-profile/?id=%s"
+        const val DIRECT_BASE_USER_PROFILE_URL = "wire://user/%s"
     }
 
 }

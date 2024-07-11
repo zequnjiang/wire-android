@@ -162,17 +162,13 @@ private fun SelfQRCodeContent(
                 color = colorsScheme().secondaryText
             )
             Spacer(modifier = Modifier.weight(1f))
-            ShareLinkButton(state.userProfileLink, {})
+            ShareLinkButton(state.userProfileShareableLink)
         }
     }
-
 }
 
 @Composable
-private fun ShareLinkButton(
-    selfProfileUrl: String,
-    onShareLinkClick: () -> Unit
-) {
+private fun ShareLinkButton(selfProfileUrl: String) {
     val context = LocalContext.current
     WirePrimaryButton(
         modifier = Modifier
