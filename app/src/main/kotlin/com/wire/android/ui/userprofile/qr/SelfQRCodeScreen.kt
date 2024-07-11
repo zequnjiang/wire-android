@@ -32,11 +32,11 @@ import androidx.compose.material.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -162,7 +162,7 @@ private fun SelfQRCodeContent(
                 color = colorsScheme().secondaryText
             )
             Spacer(modifier = Modifier.weight(1f))
-            ShareLinkButton({/* TODO */ })
+            ShareLinkButton(state.userProfileLink, {})
         }
     }
 
@@ -170,8 +170,10 @@ private fun SelfQRCodeContent(
 
 @Composable
 private fun ShareLinkButton(
+    selfProfileUrl: String,
     onShareLinkClick: () -> Unit
 ) {
+    val context = LocalContext.current
     WirePrimaryButton(
         modifier = Modifier
             .fillMaxWidth()
@@ -179,11 +181,7 @@ private fun ShareLinkButton(
             .padding(dimensions().spacing16x)
             .testTag("Share link"),
         text = stringResource(R.string.user_profile_qr_code_share_link),
-        onClick = remember {
-            {
-                onShareLinkClick()
-            }
-        }
+        onClick = { context.shareLinkToProfile(selfProfileUrl) }
     )
 }
 

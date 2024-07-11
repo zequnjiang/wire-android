@@ -40,8 +40,8 @@ import com.wire.android.ui.home.messagecomposer.model.MessageBundle
 import com.wire.android.ui.home.messagecomposer.model.Ping
 import com.wire.android.ui.navArgs
 import com.wire.android.ui.sharing.SendMessagesSnackbarMessages
-import com.wire.android.util.SUPPORTED_AUDIO_MIME_TYPE
 import com.wire.android.util.ImageUtil
+import com.wire.android.util.SUPPORTED_AUDIO_MIME_TYPE
 import com.wire.android.util.dispatchers.DispatcherProvider
 import com.wire.android.util.getAudioLengthInMs
 import com.wire.kalium.logic.CoreFailure
@@ -114,6 +114,9 @@ class SendMessageViewModel @Inject constructor(
     )
 
     init {
+        conversationNavArgs.pendingTextBundle?.let { text ->
+            trySendPendingMessageBundle(text)
+        }
         conversationNavArgs.pendingBundles?.let { assetBundles ->
             trySendMessages(
                 assetBundles.map { assetBundle ->
@@ -138,6 +141,12 @@ class SendMessageViewModel @Inject constructor(
 
     fun trySendMessage(messageBundle: MessageBundle) {
         trySendMessages(listOf(messageBundle))
+    }
+
+    private fun trySendPendingMessageBundle(pendingMessage: String) {
+        viewModelScope.launch {
+            sendMessage(ComposableMessageBundle.SendTextMessageBundle(conversationId, pendingMessage, emptyList()))
+        }
     }
 
     fun trySendMessages(messageBundleList: List<MessageBundle>) {
@@ -413,6 +422,7 @@ class SendMessageViewModel @Inject constructor(
         }
         sureAboutMessagingDialogState = SureAboutMessagingDialogState.Hidden
     }
+
     private companion object {
         const val MAX_LIMIT_MESSAGE_SEND = 20
     }

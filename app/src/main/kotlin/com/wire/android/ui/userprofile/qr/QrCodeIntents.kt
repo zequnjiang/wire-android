@@ -15,16 +15,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
-package com.wire.android.ui.home.conversations
+package com.wire.android.ui.userprofile.qr
 
-import com.wire.android.ui.home.conversations.model.AssetBundle
-import com.wire.kalium.logic.data.id.ConversationId
-import kotlinx.serialization.Serializable
+import android.content.Context
+import android.content.Intent
 
-@Serializable
-data class ConversationNavArgs(
-    val conversationId: ConversationId,
-    val searchedMessageId: String? = null,
-    val pendingBundles: ArrayList<AssetBundle>? = null,
-    val pendingTextBundle: String? = null
-)
+fun Context.shareLinkToProfile(selfProfileUrl: String) {
+    val sendIntent: Intent = Intent().apply {
+        action = Intent.ACTION_SEND
+        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        putExtra(Intent.EXTRA_TEXT, selfProfileUrl)
+        type = "text/plain"
+    }
+
+    val shareIntent = Intent.createChooser(sendIntent, null)
+    startActivity(shareIntent)
+}

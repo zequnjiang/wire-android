@@ -30,6 +30,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.text.input.TextFieldState
@@ -161,7 +162,8 @@ private fun ImportMediaAuthenticatedContent(
                                     ConversationScreenDestination(
                                         ConversationNavArgs(
                                             conversationId = conversationItem.conversationId,
-                                            pendingBundles = ArrayList(it)
+                                            pendingBundles = ArrayList(it),
+                                            pendingTextBundle = importMediaViewModel.importMediaState.importedText
                                         )
                                     ),
                                     BackStackMode.REMOVE_CURRENT_AND_REPLACE
@@ -182,8 +184,8 @@ private fun ImportMediaAuthenticatedContent(
         )
 
         val context = LocalContext.current
-        LaunchedEffect(importMediaViewModel.importMediaState.importedAssets) {
-            if (importMediaViewModel.importMediaState.importedAssets.isEmpty()) {
+        LaunchedEffect(importMediaViewModel.importMediaState.importedText) {
+            if (importMediaViewModel.importMediaState.importedText.isNullOrBlank()) {
                 context.getActivity()
                     ?.let { importMediaViewModel.handleReceivedDataFromSharingIntent(it) }
             }
@@ -439,46 +441,9 @@ private fun ImportMediaContent(
                 )
             }
         } else {
-            LazyRow(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(dimensions().spacing120x),
-                contentPadding = PaddingValues(start = dimensions().spacing8x, end = dimensions().spacing8x)
-            ) {
-                items(
-                    count = importedItemsList.size,
-                ) { index ->
-                    Box(
-                        modifier = Modifier
-                            .width(dimensions().spacing120x)
-                            .fillMaxHeight()
-                    ) {
-                        val assetSize = dimensions().spacing120x - dimensions().spacing16x
-                        AssetTilePreview(
-                            modifier = Modifier
-                                .width(assetSize)
-                                .height(assetSize)
-                                .align(Alignment.Center),
-                            assetBundle = importedItemsList[index].assetBundle,
-                            showOnlyExtension = false,
-                            onClick = {}
-                        )
-
-                        if (importedItemsList.size > 1) {
-                            RemoveIcon(
-                                modifier = Modifier.align(Alignment.TopEnd),
-                                onClick = { onRemoveAsset(index) },
-                                contentDescription = stringResource(id = R.string.remove_asset_description)
-                            )
-                        }
-                        if (importedItemsList[index].assetSizeExceeded != null) {
-                            ErrorIcon(
-                                stringResource(id = R.string.asset_attention_description),
-                                modifier = Modifier.align(Alignment.Center)
-                            )
-                        }
-                    }
-                }
+            when (state.importedText.isNullOrBlank()) {
+                true -> ImportAssetsCarrousel(importedItemsList, onRemoveAsset)
+                false -> ImportText(state.importedText)
             }
         }
         HorizontalDivider(
@@ -516,6 +481,67 @@ private fun ImportMediaContent(
     }
     BackHandler(enabled = searchBarState.isSearchActive) {
         searchBarState.closeSearch()
+    }
+}
+
+@Composable
+private fun ImportText(importedText: String) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentSize()
+            .padding(dimensions().spacing8x),
+    ) {
+        Text(text = importedText)
+    }
+}
+
+@Composable
+private fun ImportAssetsCarrousel(
+    importedItemsList: PersistentList<ImportedMediaAsset>,
+    onRemoveAsset: (index: Int) -> Unit
+) {
+    LazyRow(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(dimensions().spacing120x),
+        contentPadding = PaddingValues(start = dimensions().spacing8x, end = dimensions().spacing8x)
+    ) {
+        items(
+            count = importedItemsList.size,
+        ) { index ->
+            Box(
+                modifier = Modifier
+                    .width(dimensions().spacing120x)
+                    .fillMaxHeight()
+            ) {
+                val assetSize = dimensions().spacing120x - dimensions().spacing16x
+                AssetTilePreview(
+                    modifier = Modifier
+                        .width(assetSize)
+                        .height(assetSize)
+                        .align(Alignment.Center),
+                    assetBundle = importedItemsList[index].assetBundle,
+                    showOnlyExtension = false,
+                    onClick = {}
+                )
+
+                if (importedItemsList.size > 1) {
+                    RemoveIcon(
+                        modifier = Modifier.align(Alignment.TopEnd),
+                        onClick = { onRemoveAsset(index) },
+                        contentDescription = stringResource(id = R.string.remove_asset_description)
+                    )
+                }
+                if (importedItemsList[index].assetSizeExceeded != null) {
+                    ErrorIcon(
+                        stringResource(id = R.string.asset_attention_description),
+                        modifier = Modifier.align(Alignment.Center)
+                    )
+                }
+            }
+        }
     }
 }
 

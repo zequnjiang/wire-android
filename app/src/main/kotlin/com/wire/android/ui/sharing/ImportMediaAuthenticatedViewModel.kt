@@ -379,4 +379,9 @@ data class ImportMediaAuthenticatedState(
     val shareableConversationListState: ShareableConversationListState = ShareableConversationListState(),
     val selectedConversationItem: List<ConversationItem> = emptyList(),
     val selfDeletingTimer: SelfDeletionTimer = SelfDeletionTimer.Enabled(null)
-)
+) {
+    @Stable
+    fun isImportingData() {
+        importedText.isNullOrBlank() && importedAssets.isNotEmpty()
+    }
+}
