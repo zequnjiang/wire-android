@@ -572,8 +572,8 @@ private fun ConversationDetails.toConversationItem(
         throw IllegalArgumentException("Self conversations should not be visible to the user.")
     }
 
-    else -> {
-        throw IllegalArgumentException("$this conversations should not be visible to the user.")
+    is ConversationDetails.Team -> {
+        throw IllegalArgumentException("Team conversations should not be visible to the user.")
     }
 }
 
