@@ -18,6 +18,7 @@
 
 package com.wire.android.ui.userprofile.common
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.animateContentSize
@@ -89,6 +90,7 @@ fun UserProfileInfo(
     delayToShowPlaceholderIfNoAsset: Duration = 200.milliseconds,
     isProteusVerified: Boolean = false,
     isMLSVerified: Boolean = false,
+    isTemporaryUser: Boolean = false
 ) {
     Column(
         horizontalAlignment = CenterHorizontally,
@@ -182,7 +184,7 @@ fun UserProfileInfo(
                     if (isProteusVerified) ProteusVerifiedIcon()
                 }
                 Text(
-                    text = if (membership == Membership.Service) userName else userName.ifNotEmpty { "@$userName" },
+                    text = Username(userName, membership, isTemporaryUser),
                     overflow = TextOverflow.Ellipsis,
                     style = MaterialTheme.wireTypography.body02,
                     maxLines = 1,
@@ -231,6 +233,16 @@ fun UserProfileInfo(
     }
 }
 
+@SuppressLint("ComposeNamingLowercase")
+@Composable
+private fun Username(userName: String, membership: Membership, isTemporaryUser: Boolean): String {
+    return when {
+        isTemporaryUser -> UIText.StringResource(R.string.temporary_user_label, userName).asString()
+        membership == Membership.Service -> userName
+        else -> userName.ifNotEmpty { "@$userName" }
+    }
+}
+
 @Composable
 private fun ManageMemberButton(modifier: Modifier, onEditClick: () -> Unit) {
     IconButton(
@@ -263,14 +275,15 @@ fun PreviewUserProfileInfo() {
     UserProfileInfo(
         userId = UserId("value", "domain"),
         isLoading = true,
-        editableState = EditableState.IsEditable {},
-        userName = "userName",
         avatarAsset = null,
         fullName = "fullName",
-        onUserProfileClick = {},
+        userName = "userName",
         teamName = "Wire",
+        onUserProfileClick = {},
+        editableState = EditableState.IsEditable {},
         connection = ConnectionState.ACCEPTED,
         isProteusVerified = true,
-        isMLSVerified = true
+        isMLSVerified = true,
+        isTemporaryUser = false
     )
 }

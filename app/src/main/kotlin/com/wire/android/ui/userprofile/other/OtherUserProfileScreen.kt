@@ -423,6 +423,7 @@ private fun TopBarCollapsing(
                 connection = targetState.connectionState,
                 isProteusVerified = targetState.isProteusVerified,
                 isMLSVerified = targetState.isMLSVerified,
+                isTemporaryUser = targetState.isTemporaryUser()
             )
             if (state.isUnderLegalHold) {
                 LegalHoldSubjectBanner(
@@ -558,7 +559,7 @@ private fun ContentFooter(
         ) {
             Box(modifier = Modifier.padding(all = dimensions().spacing16x)) {
                 // TODO show open conversation button for service bots after AR-2135
-                if (!state.isMetadataEmpty() && state.membership != Membership.Service) {
+                if (!state.isMetadataEmpty() && state.membership != Membership.Service && !state.isTemporaryUser()) {
                     ConnectionActionButton(
                         state.userId,
                         state.userName,

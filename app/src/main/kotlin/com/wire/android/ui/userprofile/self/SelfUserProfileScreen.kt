@@ -229,7 +229,8 @@ private fun SelfUserProfileContent(
                             userName = userName,
                             teamName = teamName,
                             onUserProfileClick = onChangeUserProfilePicture,
-                            editableState = EditableState.IsEditable(onEditClick)
+                            editableState = EditableState.IsEditable(onEditClick),
+                            isTemporaryUser = false
                         )
                     }
                     if (state.legalHoldStatus != LegalHoldUIState.None) {
@@ -426,7 +427,7 @@ private fun OtherAccountItem(
         },
         subtitle = {
             if (account.teamName != null) {
-                HighlightSubtitle(subTitle = account.teamName, suffix = "")
+                HighlightSubtitle(subTitle = account.teamName, prefix = "")
             }
         },
         actions = {

@@ -29,6 +29,7 @@ import com.wire.kalium.logic.data.id.ConversationId
 import com.wire.kalium.logic.data.user.BotService
 import com.wire.kalium.logic.data.user.ConnectionState
 import com.wire.kalium.logic.data.user.UserId
+import kotlinx.datetime.Instant
 
 data class OtherUserProfileState(
     val userId: UserId,
@@ -51,7 +52,8 @@ data class OtherUserProfileState(
     val isProteusVerified: Boolean = false,
     val isMLSVerified: Boolean = false,
     val isUnderLegalHold: Boolean = false,
-    val isConversationStarted: Boolean = false
+    val isConversationStarted: Boolean = false,
+    val expiresAt: Instant? = null
 ) {
     fun updateMuteStatus(status: MutedConversationStatus): OtherUserProfileState {
         return conversationSheetContent?.let {
@@ -72,6 +74,8 @@ data class OtherUserProfileState(
             )
         )
     }
+
+    fun isTemporaryUser() = expiresAt != null
 
     fun isMetadataEmpty(): Boolean {
         return fullName.isEmpty() && userName.isEmpty()
