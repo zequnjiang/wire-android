@@ -25,10 +25,13 @@ buildscript {
     }
     dependencies {
         classpath(libs.hilt.gradlePlugin)
-        val fdroidBuild = (System.getenv("flavor")
-            ?: System.getenv("FLAVOR")
-            ?: System.getenv("CUSTOM_FLAVOR")
-            ?: gradle.startParameter.taskRequests.toString())
+        // TODO: replace this with FOSS env variable
+        val fdroidBuild = (
+                System.getenv("CUSTOM_FLAVOR")
+                    ?: System.getenv("flavor")
+                    ?: System.getenv("FLAVOR")
+                    ?: gradle.startParameter.taskRequests.toString()
+                )
             .lowercase()
             .contains("fdroid")
 
