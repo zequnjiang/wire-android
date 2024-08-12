@@ -31,15 +31,16 @@ class Versionizer(private val localDateTime: LocalDateTime = LocalDateTime.now()
 
     val versionCode = generateVersionCode()
 
-    private fun generateVersionCode(): Int {
-        return if (localDateTime <= V2_DATE_OFFSET) {
-            val duration = Duration.between(V1_DATE_OFFSET, localDateTime)
-            (duration.seconds / V1_SECONDS_PER_BUMP).toInt()
-        } else { // Use V2
-            val duration = Duration.between(V2_DATE_OFFSET, localDateTime)
-            V2_VERSION_CODE_OFFSET + (duration.toMinutes() / V2_MINUTES_PER_BUMP).toInt()
-        }
-    }
+    private fun generateVersionCode(): Int = 9803154
+//    {
+//        return if (localDateTime <= V2_DATE_OFFSET) {
+//            val duration = Duration.between(V1_DATE_OFFSET, localDateTime)
+//            (duration.seconds / V1_SECONDS_PER_BUMP).toInt()
+//        } else { // Use V2
+//            val duration = Duration.between(V2_DATE_OFFSET, localDateTime)
+//            V2_VERSION_CODE_OFFSET + (duration.toMinutes() / V2_MINUTES_PER_BUMP).toInt()
+//        }
+//    }
 
     companion object {
         // This is Google Play Max Version Code allowed
