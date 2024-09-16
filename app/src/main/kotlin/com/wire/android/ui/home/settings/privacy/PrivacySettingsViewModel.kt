@@ -153,6 +153,7 @@ class PrivacySettingsViewModel @Inject constructor(
         }
     }
 
+    // TODO(ym): block ui toggle, is crashing when behaving as a monkey
     fun setAnonymousUsageDataEnabled(enabled: Boolean) {
         viewModelScope.launch {
             dataStore.setIsAnonymousAnalyticsEnabled(enabled)
