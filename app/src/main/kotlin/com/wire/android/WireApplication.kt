@@ -145,7 +145,6 @@ class WireApplication : BaseApp() {
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
             override fun onActivityStarted(activity: Activity) {
-                initializeAnonymousAnalytics()
                 globalAnalyticsManager.onStart(activity)
             }
 
@@ -181,6 +180,8 @@ class WireApplication : BaseApp() {
         // 4. Everything ready, now we can log device info
         appLogger.i("Logger enabled")
         logDeviceInformation()
+        // 5. Verify if we can initialize Anonymous Analytics
+        initializeAnonymousAnalytics()
     }
 
     private fun initializeAnonymousAnalytics() {
