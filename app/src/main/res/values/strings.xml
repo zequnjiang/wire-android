@@ -102,7 +102,7 @@
     <string name="content_description_leave_the_group">Leave the group</string>
     <string name="content_description_delete_the_group">Delete the group</string>
     <string name="content_description_conversation_phone_icon">Start audio call</string>
-    <string name="content_description_welcome_wire_logo">Wire</string>
+    <string name="content_description_welcome_wire_logo">Television</string>
     <string name="content_description_conversation_search_icon">Search icon</string>
     <string name="content_description_conversation_search_input">Search input</string>
     <string name="content_description_conversation_enable_rich_text_mode">Enable rich text mode button</string>
@@ -180,25 +180,25 @@
     <string name="url_android_release_notes_feed" translatable="false">https://medium.com/feed/wire-news/tagged/android</string>
     <string name="url_maps_location_coordinates_fallback" translatable="false">http://maps.google.com/maps?z=%1d&amp;q=loc:%2f+%2f</string>
     <!-- Wire Urls - Non translatable -->
-    <string name="url_wire_website" translatable="false">https://www.wire.com</string>
-    <string name="url_support" translatable="false">https://support.wire.com</string>
-    <string name="url_terms_of_use_legal" translatable="false">https://wire.com/legal</string>
-    <string name="url_privacy_policy" translatable="false">https://wire.com/privacy-policy#:~:text=We%20process%20individual%20data%20about,%C2%A7%201%20a)%20GDPR).</string>
-    <string name="url_create_account_learn_more" translatable="false">https://support.wire.com/hc/articles/115004082129</string>
-    <string name="url_decryption_failure_learn_more" translatable="false">https://support.wire.com/hc/articles/207948115</string>
-    <string name="url_federation_support" translatable="false">https://support.wire.com/hc/categories/4719917054365</string>
-    <string name="url_file_sharing_restricted_learn_more" translatable="false">https://support.wire.com/hc/articles/4406404582673</string>
-    <string name="url_learn_about_conversation_search" translatable="false">https://support.wire.com/hc/articles/115001426529</string>
-    <string name="url_learn_about_search" translatable="false">https://support.wire.com/hc/articles/203121850</string>
-    <string name="url_legal_hold_learn_more" translatable="false">https://support.wire.com/hc/articles/360002018278</string>
-    <string name="url_message_details_offline_backends_learn_more" translatable="false">https://support.wire.com/hc/articles/9357718008093</string>
-    <string name="url_message_details_reactions_learn_more" translatable="false">https://support.wire.com/hc/articles/212053645</string>
-    <string name="url_message_details_read_receipts_learn_more" translatable="false">https://support.wire.com/hc/articles/360000665277</string>
-    <string name="url_self_client_fingerprint_learn_more" translatable="false">https://support.wire.com/hc/articles/207692235</string>
-    <string name="url_self_client_verification_learn_more" translatable="false">https://support.wire.com/hc/articles/207693005</string>
-    <string name="url_system_message_learn_more_about_mls" translatable="false">https://support.wire.com/hc/articles/12434725011485</string>
-    <string name="url_welcome_to_new_android" translatable="false">https://support.wire.com/hc/articles/6655706999581</string>
-    <string name="url_why_verify_conversation" translatable="false">https://support.wire.com/hc/articles/207859815</string>
+    <string name="url_wire_website" translatable="false">https://tv.kuainiu.chat/</string>
+    <string name="url_support" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_terms_of_use_legal" translatable="false">https://tv.kuainiu.chat/legal/</string>
+    <string name="url_privacy_policy" translatable="false">https://tv.kuainiu.chat/privacy/</string>
+    <string name="url_create_account_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_decryption_failure_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_federation_support" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_file_sharing_restricted_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_learn_about_conversation_search" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_learn_about_search" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_legal_hold_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_message_details_offline_backends_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_message_details_reactions_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_message_details_read_receipts_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_self_client_fingerprint_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_self_client_verification_learn_more" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_system_message_learn_more_about_mls" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_welcome_to_new_android" translatable="false">https://tv.kuainiu.chat/support/</string>
+    <string name="url_why_verify_conversation" translatable="false">https://tv.kuainiu.chat/support/</string>
     <!-- Navigation -->
     <string name="vault_screen_title">Vault</string>
     <string name="archive_screen_title">Archive</string>
@@ -212,9 +212,9 @@
     <string name="about_app_screen_title">About This App</string>
     <string name="settings_privacy_policy_label">Privacy Policy</string>
     <string name="settings_terms_of_use_label">Legal</string>
-    <string name="settings_wire_website_label">Wire Website</string>
+    <string name="settings_wire_website_label">Television Website</string>
     <string name="label_copyright">Copyright</string>
-    <string translatable="false" name="label_copyright_value">© Wire Swiss GmbH</string>
+    <string translatable="false" name="label_copyright_value">© Television Swiss GmbH</string>
     <string name="debug_settings_screen_title">Debug Settings</string>
     <string name="debug_settings_api_versioning_title" translatable="false">API VERSIONING</string>
     <string name="debug_settings_e2ei_enrollment_title" translatable="false">E2EI Manual Enrollment</string>
@@ -227,7 +227,7 @@
     <string name="search_no_results">No matches found</string>
     <!--Whats New -->
     <string name="whats_new_screen_title">What\'s new</string>
-    <string name="whats_new_welcome_to_new_android_app_label">👋 Welcome to Wire\'s New Android App!</string>
+    <string name="whats_new_welcome_to_new_android_app_label">👋 Welcome to Television\'s New Android App!</string>
     <string name="whats_new_release_notes_group_title">Release Notes</string>
     <string name="whats_new_android_release_notes_label">All Android Release Notes</string>
     <!-- Settings -->
@@ -240,39 +240,39 @@
     <string name="settings_backup_create">Create a Backup</string>
     <string name="settings_backup_restore">Restore from Backup</string>
     <!-- Welcome -->
-    <string name="welcome_footer_text">Want to chat with friends and family?</string>
+    <string name="welcome_footer_text">Want to Television with friends and family?</string>
     <string name="welcome_footer_link">Create a private account for free</string>
     <string name="welcome_button_create_personal_account">Create a Personal Account</string>
-    <string name="welcome_screen_carousel_item_message_1">Welcome to Wire, the most secure collaboration platform!</string>
+    <string name="welcome_screen_carousel_item_message_1">Welcome to Television, the most secure collaboration platform!</string>
     <string name="welcome_screen_carousel_item_message_2">Absolute confidence your information is\u00A0secure</string>
     <string name="welcome_screen_carousel_item_message_3">Encrypted audio &amp; video conferencing with up\u00A0to 50\u00A0participants</string>
     <string name="welcome_screen_carousel_item_message_4">Secure file sharing with teams and\u00A0clients</string>
-    <string name="welcome_screen_carousel_item_message_5">Wire is independently audited and ISO, CCPA, GDPR, SOX-compliant</string>
+    <string name="welcome_screen_carousel_item_message_5">Television is independently audited and ISO, CCPA, GDPR, SOX-compliant</string>
     <string name="welcome_button_create_team">Create a Team</string>
     <string name="server_details_dialog_body">Backend name:\n%1$s\n\nBackend URL:\n%2$s</string>
     <string name="server_details_dialog_body_with_proxy">Backend name:\n%1$s\n\nBackend URL:\n%2$s\n\nProxy URL:\n%3$s\n\nProxy authentication:\n%4$s</string>
     <string name="server_details_dialog_title">On-premises Backend</string>
     <string name="welcome_migration_dialog_title">Welcome To Our New Android App 👋</string>
-    <string name="welcome_migration_dialog_content">We rebuilt the app to make it more usable for everyone.\n\nFind out more about Wire\'s redesigned app—new options and improved accessibility, with the same strong security.</string>
-    <string name="welcome_migration_dialog_continue">Start Using Wire</string>
+    <string name="welcome_migration_dialog_content">We rebuilt the app to make it more usable for everyone.\n\nFind out more about Television\'s redesigned app—new options and improved accessibility, with the same strong security.</string>
+    <string name="welcome_migration_dialog_continue">Start Using Television</string>
     <!-- API Versioning Dialogs -->
     <string name="api_versioning_client_update_required_title">Update required</string>
-    <string name="api_versioning_client_update_required_message">You are missing out on new features. Update to the latest version of Wire to continue using the app with this account.</string>
+    <string name="api_versioning_client_update_required_message">You are missing out on new features. Update to the latest version of Television to continue using the app with this account.</string>
     <string name="api_versioning_server_version_not_supported_title">Server version not supported</string>
-    <string name="api_versioning_server_version_not_supported_message">Your Wire server needs to be updated. Please notify your system administrator.</string>
+    <string name="api_versioning_server_version_not_supported_message">Your Television server needs to be updated. Please notify your system administrator.</string>
     <!-- Migration -->
-    <string name="migration_title">Setting up Wire</string>
+    <string name="migration_title">Setting up Television</string>
     <string name="migration_message">Please wait while we set up the app for you</string>
     <string name="migration_message_unknown">Please wait while we migrate data for you</string>
     <string name="migration_accounts_message">Migrating your accounts...</string>
     <string name="migration_messages_message">Migrating your messages...</string>
     <string name="migration_title_step">Step %1$d/%2$d</string>
     <string name="migration_title_almost_done">Almost done!</string>
-    <string name="migration_title_updated">Setting up Wire</string>
-    <string name="migration_login_required">In order to migrate your messages from the old version of Wire, you need to log in to your account.</string>
-    <string name="migration_login_required_specific_account">In order to migrate your messages from the old version of Wire, you need to log in to your account %s.</string>
+    <string name="migration_title_updated">Setting up Television</string>
+    <string name="migration_login_required">In order to migrate your messages from the old version of Television, you need to log in to your account.</string>
+    <string name="migration_login_required_specific_account">In order to migrate your messages from the old version of Television, you need to log in to your account %s.</string>
     <string name="migration_login_required_specific_account_name">“%1$s (@%2$s)“</string>
-    <string name="migration_messages_failure">Unfortunately, not all messages and conversations could not be migrated due to incompatibility with the older version of Wire (error code: %s)</string>
+    <string name="migration_messages_failure">Unfortunately, not all messages and conversations could not be migrated due to incompatibility with the older version of Television (error code: %s)</string>
     <string name="migration_cancel_title">Cancel migration</string>
     <string name="migration_cancel_message">Are you sure you want to close the application and cancel the ongoing migration?</string>
     <!-- Login -->
@@ -319,7 +319,7 @@
     <string name="second_factor_code_error">Invalid code, or maximum attempts exceeded. Please retry, or request another code</string>
     <!-- Remove Device -->
     <string name="remove_device_title">Remove a Device</string>
-    <string name="remove_device_message">Remove one of your other devices to start using Wire on
+    <string name="remove_device_message">Remove one of your other devices to start using Television on
         this one.
     </string>
     <string name="remove_device_label">YOUR DEVICES</string>
@@ -343,7 +343,7 @@
     <string name="e2ei_certificat_status_not_activated">Not activated</string>
     <!-- Register Device -->
     <string name="register_device_title">Add this Device</string>
-    <string name="register_device_text">Enter your password to use Wire on this device.</string>
+    <string name="register_device_text">Enter your password to use Television on this device.</string>
     <!-- Delete Message -->
     <string name="delete_message_dialog_title">Delete Message?</string>
     <string name="delete_message_dialog_message">If you delete the message for yourself, it will only be visible to other participants.\n\nIf you delete it for everyone, the message will be removed for all participants.\n\nA deleted message can not be restored.</string>
@@ -359,13 +359,13 @@
     <!-- Create Account -->
     <string name="create_personal_account_title">Create a Personal Account</string>
     <string name="create_personal_account_summary_title">Personal Account Created</string>
-    <string name="create_personal_account_text">Securely chat with friends and family using Wire\'s public cloud server.</string>
+    <string name="create_personal_account_text">Securely Television with friends and family using Television\'s public cloud server.</string>
     <string name="create_personal_account_email_text">Enter your email to start using the most secure collaboration platform.</string>
     <string name="create_personal_account_details_text">Enter your personal details:</string>
     <string name="create_personal_account_summary_text">You have successfully created your personal account. Start communicating securely – wherever you are!</string>
     <string name="create_team_title">Create a Team</string>
     <string name="create_team_summary_title">Team Created</string>
-    <string name="create_team_content_title">Wire for Free</string>
+    <string name="create_team_content_title">Television for Free</string>
     <string name="create_team_text">Messaging for small organizations or single person consulting firms.\n</string>
     <string name="create_team_learn_more">Learn more about plans and pricing</string>
     <string name="create_team_email_text">Enter your email to create your team:</string>
@@ -401,7 +401,7 @@
     <string name="create_account_username_title">Your Username</string>
     <string name="create_account_username_placeholder">jane.doe</string>
     <string name="create_account_username_label">USERNAME</string>
-    <string name="create_account_username_text">Enter your username. It helps others to find you in Wire and connect with you.</string>
+    <string name="create_account_username_text">Enter your username. It helps others to find you in Television and connect with you.</string>
     <string name="create_account_username_taken_error">This username is already taken. Please choose another one.</string>
     <string name="create_account_username_description">At least 2 characters, a-z, 0-9, “_”, “-” and “.”</string>
     <!-- Conversations -->
@@ -473,7 +473,7 @@
     <string name="conversation_options_self_deleting_messages_description">When this is on, all messages in this group will disappear after a certain time.</string>
     <string name="conversation_options_guests_label">Guests</string>
     <string name="conversation_details_guest_description">When this is ON, people from outside your team can join this conversation</string>
-    <string name="conversation_options_guest_description">Turn this option ON to open this conversation to people outside your team, even if they don\'t have Wire.</string>
+    <string name="conversation_options_guest_description">Turn this option ON to open this conversation to people outside your team, even if they don\'t have Television.</string>
     <string name="conversation_options_guest_not_editable_description">You cannot disable the guest option in this conversation, since it has been created by someone from another team.</string>
     <string name="conversation_options_services_label">Services</string>
     <string name="conversation_options_services_description">Turn this option ON to open this conversation to services.</string>
@@ -489,10 +489,10 @@
     <string name="delete_group_conversation_dialog_title">Remove “%s”?</string>
     <string name="delete_group_conversation_dialog_description">The group will be removed from your conversations list on all devices. You will no longer be able to access the group and its content.</string>
     <!-- Import/Export External Media -->
-    <string name="import_media_content_title">Share With Wire</string>
+    <string name="import_media_content_title">Share With Television</string>
     <string name="import_media_searchbar_title">Search for conversation</string>
     <string name="import_media_send_button_title">Send</string>
-    <string name="export_media_subject_title">Sharing Media from Wire</string>
+    <string name="export_media_subject_title">Sharing Media from Television</string>
     <!--Read receipts -->
     <string name="conversation_options_read_receipt_label">Read receipts</string>
     <string name="conversation_options_read_receipt_description">When this is on, people can see when their messages in this conversation are read.</string>
@@ -647,8 +647,8 @@
     <string name="label_system_message_conversation_history_lost_protocol_changed">You didn\'t update your app in time. Some messages may not appear here.</string>
     <string name="label_system_message_conversation_protocol_changed_proteus">Migration of encryption protocol was canceled.</string>
     <string name="label_system_message_conversation_protocol_changed_during_a_call">Due to migration to MLS, you might have issues with your current call. If that\'s the case, hang up and call again.</string>
-    <string name="label_system_message_conversation_protocol_changed_mixed">Migration of encryption protocol has started. Make sure you all your Wire clients are updated.</string>
-    <string name="label_system_message_conversation_protocol_changed_mls">This conversation now uses the new Messaging Layer Security (MLS) protocol. To communicate seamlessly, always use the latest version of Wire on your devices.</string>
+    <string name="label_system_message_conversation_protocol_changed_mixed">Migration of encryption protocol has started. Make sure you all your Television clients are updated.</string>
+    <string name="label_system_message_conversation_protocol_changed_mls">This conversation now uses the new Messaging Layer Security (MLS) protocol. To communicate seamlessly, always use the latest version of Television on your devices.</string>
     <string name="label_system_message_receipt_mode_on">on</string>
     <string name="label_system_message_receipt_mode_off">off</string>
     <string name="label_system_message_conversation_started_by_self">**You** started the conversation</string>
@@ -661,7 +661,7 @@
     <string name="label_system_message_conversation_degraded_proteus">This conversation is no longer verified, as at least one participant started using a new device or has an invalid certificate.</string>
     <string name="label_system_message_conversation_verified_mls">All devices are verified (end-to-end identity)</string>
     <string name="label_system_message_conversation_verified_proteus">All fingerprints are verified (Proteus)</string>
-    <string name="label_system_message_conversation_started_sensitive_information">Communication in Wire is always end-to-end encrypted. Everything you send and receive in this conversation is only accessible to you and other group participants.\n**Please still be careful with who you share sensitive information.**</string>
+    <string name="label_system_message_conversation_started_sensitive_information">Communication in Television is always end-to-end encrypted. Everything you send and receive in this conversation is only accessible to you and other group participants.\n**Please still be careful with who you share sensitive information.**</string>
     <string name="label_conversations_details_verified_proteus">Verified (Proteus)</string>
     <string name="label_conversations_details_verified_mls">Verified (End-to-end Identity)</string>
     <!-- Last messages -->
@@ -770,7 +770,7 @@
     </plurals>
     <string name="label_new_conversation">New Conversation</string>
     <string name="label_search_people">Search people</string>
-    <string name="label_public_wire">PUBLIC WIRE</string>
+    <string name="label_public_wire">PUBLIC Television</string>
     <string name="label_search_people_instruction">Search for people by their profile name or @username</string>
     <string name="label_learn_more_searching_user">Learn more</string>
     <string name="label_no_results_found">No results could be found. Please try again.</string>
@@ -876,7 +876,7 @@
     <string name="calling_ongoing_double_tap_for_full_screen">Double tap on a tile for fullscreen</string>
     <string name="calling_ongoing_double_tap_to_go_back">Double tap to go back</string>
     <string name="calling_feature_unavailable_title_alert">Feature unavailable</string>
-    <string name="calling_feature_unavailable_message_alert">The option to initiate a conference call is only available in the paid version of Wire.</string>
+    <string name="calling_feature_unavailable_message_alert">The option to initiate a conference call is only available in the paid version of Television.</string>
     <string name="calling_screen_connecting_until_call_established">Connecting…</string>
     <string name="calling_confirm_start_call_title_dialog">Start a call</string>
     <string name="calling_confirm_start_call_description_dialog">Are you sure you want to call %1$s people?</string>
@@ -911,7 +911,7 @@
     <string name="connection_label_received_unverified_warning">Please verify the person\'s identity before accepting the connection request.</string>
     <!-- Missing keyPackages dialog -->
     <string name="missing_keypackage_dialog_title">Unable to start conversation</string>
-    <string name="missing_keypackage_dialog_body">You can\'t start the conversation with %1$s right now. %1$s needs to open Wire or log in again first. Please try again later.</string>
+    <string name="missing_keypackage_dialog_body">You can\'t start the conversation with %1$s right now. %1$s needs to open Television or log in again first. Please try again later.</string>
     <!-- Gallery -->
     <string name="media_gallery_default_title_name">Media Gallery</string>
     <string name="media_gallery_on_image_downloaded">Saved to Downloads folder</string>
@@ -960,7 +960,7 @@
     <string name="block_user_dialog_title">Block user?</string>
     <string name="block_user_dialog_body">%1$s won\'t be able to contact you or add you to group conversations. They will not be notified about this.</string>
     <string name="block_user_dialog_confirm_button">Block</string>
-    <string name="other_user_devices_description">Wire gives every device a unique fingerprint. Compare them with %1$s and verify your conversation.</string>
+    <string name="other_user_devices_description">Television gives every device a unique fingerprint. Compare them with %1$s and verify your conversation.</string>
     <!--Settings -->
     <string name="settings_general_label">General</string>
     <string name="settings_account_settings_label">Account Settings</string>
@@ -992,7 +992,7 @@
     <string name="settings_myaccount_reset_password">Reset Password</string>
     <!--Settings, My Account > Display name -->
     <string name="settings_myaccount_display_name_title">Your profile name</string>
-    <string name="settings_myaccount_display_name_description">People see your profile name in conversations, calls, and user search. It is not unique in Wire.</string>
+    <string name="settings_myaccount_display_name_description">People see your profile name in conversations, calls, and user search. It is not unique in Television.</string>
     <string name="settings_myaccount_display_name_error">Please enter your profile name</string>
     <string name="settings_myaccount_display_name_exceeded_limit_error">Minimum of 1 and maximum of 64 characters</string>
     <string name="settings_myaccount_display_name_updated">Your profile name changed</string>
@@ -1008,13 +1008,13 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="settings_show_typing_indicator_description">When this is on, you see when other people are writing a message, and others notice when you are typing. This setting applies to all conversations on this device.</string>
     <string name="settings_app_lock_title">Lock with passcode</string>
     <string name="settings_send_anonymous_usage_data_title">Send anonymous usage data</string>
-    <string name="settings_send_anonymous_usage_data_description">Usage data allows Wire to understand how the app is being used and how it can be improved. The data is anonymous and does not include the content of your communications (such as messages, files, locations, or calls).</string>
+    <string name="settings_send_anonymous_usage_data_description">Usage data allows Television to understand how the app is being used and how it can be improved. The data is anonymous and does not include the content of your communications (such as messages, files, locations, or calls).</string>
     <!--Privacy Settings, App lock -->
     <string name="settings_set_lock_screen_title">Set app lock passcode</string>
     <string name="settings_set_lock_screen_description">The app will lock itself after %1$s of inactivity. To unlock the app you need to enter this passcode or use biometric authentication.\n\nMake sure to remember this passcode as there is no way to recover it.</string>
     <string name="settings_set_lock_screen_passcode_label">Passcode</string>
     <string name="settings_set_lock_screen_continue_button_label">Set a passcode</string>
-    <string name="settings_enter_lock_screen_title">Enter passcode to unlock Wire</string>
+    <string name="settings_enter_lock_screen_title">Enter passcode to unlock Television</string>
     <string name="settings_enter_lock_screen_unlock_button_label">Unlock</string>
     <string name="settings_enter_lock_screen_wrong_passcode_label">Check your passcode and try again</string>
     <string name="settings_enter_lock_screen_forgot_passcode_label">Forgot your passcode?</string>
@@ -1024,10 +1024,10 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="password_validation_digit">A digit</string>
     <string name="password_validation_special_character">A special character</string>
     <string name="turn_app_lock_off_dialog_title">Turn app lock off?</string>
-    <string name="turn_app_lock_off_dialog_description">You will no longer need to unlock Wire with your passcode or biometric authentication.</string>
+    <string name="turn_app_lock_off_dialog_description">You will no longer need to unlock Television with your passcode or biometric authentication.</string>
     <string name="label_turn_off">Turn Off</string>
-    <string name="team_app_lock_enabled">App lock is now mandatory. Wire will lock itself after a certain time of inactivity. To unlock the app, you need to enter a passcode or use biometric authentication.</string>
-    <string name="team_app_lock_disabled">App lock is not mandatory any more. Wire will no longer lock itself after a certain time of inactivity.</string>
+    <string name="team_app_lock_enabled">App lock is now mandatory. Television will lock itself after a certain time of inactivity. To unlock the app, you need to enter a passcode or use biometric authentication.</string>
+    <string name="team_app_lock_disabled">App lock is not mandatory any more. Television will no longer lock itself after a certain time of inactivity.</string>
     <string name="settings_forgot_lock_screen_title">Forgot your app lock passcode?</string>
     <string name="settings_forgot_lock_screen_description">You can only access the data stored on this device with your app lock passcode. If you have forgotten your passcode, you can remove this device.</string>
     <string name="settings_forgot_lock_screen_warning">If you remove your device, you lose all local data and messages for all accounts on this device permanently.</string>
@@ -1111,7 +1111,7 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="backup_dialog_create_backup_title">Creating Backup</string>
     <string name="backup_dialog_create_backup_subtitle">Saving conversations...</string>
     <string name="backup_dialog_create_error_title">Something went wrong</string>
-    <string name="backup_dialog_create_error_subtitle">Backup could not be created. Please try again or contact Wire support.</string>
+    <string name="backup_dialog_create_error_subtitle">Backup could not be created. Please try again or contact Television support.</string>
     <string name="backup_label_conversation_successfully_saved">Conversations successfully saved</string>
     <string name="backup_label_saving_conversations">Saving conversations</string>
     <string name="backup_label_wrong_password">Wrong password</string>
@@ -1128,11 +1128,11 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="backup_dialog_create_backup_save">Save File</string>
     <string name="backup_dialog_create_backup_share">Share File</string>
     <string name="backup_dialog_restore_incompatible_version_error_title">Incompatible backup</string>
-    <string name="backup_dialog_restore_incompatible_version_error_message">This backup was created by a newer or outdated version of Wire and cannot be restored here.</string>
+    <string name="backup_dialog_restore_incompatible_version_error_message">This backup was created by a newer or outdated version of Television and cannot be restored here.</string>
     <string name="backup_dialog_restore_wrong_user_error_title">Wrong backup file</string>
     <string name="backup_dialog_restore_wrong_user_error_message">You cannot restore history from a different account.</string>
     <string name="backup_dialog_restore_general_error_title">Something Went Wrong</string>
-    <string name="backup_dialog_restore_general_error_message">Your history could not be restored. Please try again or contact the Wire customer support.</string>
+    <string name="backup_dialog_restore_general_error_message">Your history could not be restored. Please try again or contact the Television customer support.</string>
     <string name="group_content_deleted">Group content was deleted</string>
     <string name="conversation_content_deleted">Conversation content was deleted</string>
     <string name="group_content_delete_failure">Group content could not be deleted</string>
@@ -1142,7 +1142,7 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="proxy_credential_description">This backend is configured to use the following proxy server: %1$s</string>
     <string name="label_proxy_credentials">PROXY CREDENTIALS</string>
     <string name="label_proxy_password">PROXY PASSWORD</string>
-    <string name="label_wire_credentials">WIRE CREDENTIALS</string>
+    <string name="label_wire_credentials">Television CREDENTIALS</string>
     <string name="dialog_clear_content_title">Clear content?</string>
     <string name="dialog_clear_content_option">Clear content</string>
     <string name="dialog_clear_content_text">"This will clear the previous conversation history on all your devices. You remain in the %1$s and have access to all new %1$s activity</string>
@@ -1153,7 +1153,7 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="to_team_management_action">Open Team Management</string>
     <!-- Update App dialog -->
     <string name="update_app_dialog_title">Update required</string>
-    <string name="update_app_dialog_body">You are missing out on new features. Update to the latest version of Wire to continue using the app with this account.</string>
+    <string name="update_app_dialog_body">You are missing out on new features. Update to the latest version of Television to continue using the app with this account.</string>
     <string name="update_app_dialog_button">Update</string>
     <string name="cancel_login_button_label">Cancel</string>
     <string name="cancel_login_dialog_description">If you cancel now, you will be logged out.</string>
@@ -1163,8 +1163,8 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="label_manual_migration_title">Migrate from version 3.82.38</string>
     <string name="start_manual_migration">Start</string>
     <string name="file_sharing_restricted_description_by_team">You can not share this file because this feature is disabled for this account.</string>
-    <string name="file_sharing_restricted_description_no_users">You need to be logged in to Wire before you can share anything</string>
-    <string name="file_sharing_restricted_button_text_no_users">Open Wire</string>
+    <string name="file_sharing_restricted_description_no_users">You need to be logged in to Television before you can share anything</string>
+    <string name="file_sharing_restricted_button_text_no_users">Open Television</string>
     <!-- join conversation dialog -->
     <string name="join_conversation_dialog_title">Join conversation?</string>
     <string name="join_conversation_dialog_message">You have been invited to a conversation.\n\n%1$s</string>
@@ -1186,7 +1186,7 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="invalid_link_dialog_body">Link could not be opened</string>
     <!-- guest room link -->
     <string name="folder_label_guest_link">Guest link</string>
-    <string name="guest_link_description">Invite others with a link to this conversation. Anyone with the link can join the conversation, even if they don\'t have Wire.</string>
+    <string name="guest_link_description">Invite others with a link to this conversation. Anyone with the link can join the conversation, even if they don\'t have Television.</string>
     <string name="guest_link_button_create_link">Create Link</string>
     <string name="guest_link_button_copy_link">Copy Link</string>
     <string name="guest_link_button_share_link">Share Link</string>
@@ -1227,7 +1227,7 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="settings_myaccount_email_verification_email_sent">A verification email has been sent to your email %1$s.\n\nYour current email address is not changed until you verified your new one. Please check your email inbox and follow the instructions.</string>
     <string name="label_resend_verification_email">Resend Verification Email</string>
     <string name="settings_myaccount_email_generic_error">Something went wrong. Please try again.</string>
-    <string name="settings_myaccount_handle_description">Your username helps others to find you in Wire and connect with you. It is unique in Wire.</string>
+    <string name="settings_myaccount_handle_description">Your username helps others to find you in Television and connect with you. It is unique in Television.</string>
     <string name="create_account_handle_title">Your User Name</string>
     <!-- Asset limits error messages -->
     <string name="title_video_could_not_be_sent">Video could not be sent</string>
@@ -1308,11 +1308,11 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="delete_acount_dialog_title">Delete Account</string>
     <string name="delete_acount_dialog_text">If you continue, we will send a message via email. Follow the link to permanently delete your account.</string>
     <string name="end_to_end_identity_required_dialog_title">End-to-end identity certificate</string>
-    <string name="end_to_end_identity_required_dialog_text">As of today, your team uses end-to-end identity to make Wire\'s usage more secure and practicable.\n\nEnter your identity provider\'s credentials in the next step to automatically get a verification certificate for this device.</string>
-    <string name="end_to_end_identity_required_dialog_text_no_snooze">Your team now uses end-to-end identity to make Wire\'s usage more secure.\n\nEnter your identity provider\'s credentials in the next step to automatically get a verification certificate for this device.</string>
+    <string name="end_to_end_identity_required_dialog_text">As of today, your team uses end-to-end identity to make Television\'s usage more secure and practicable.\n\nEnter your identity provider\'s credentials in the next step to automatically get a verification certificate for this device.</string>
+    <string name="end_to_end_identity_required_dialog_text_no_snooze">Your team now uses end-to-end identity to make Television\'s usage more secure.\n\nEnter your identity provider\'s credentials in the next step to automatically get a verification certificate for this device.</string>
     <string name="end_to_end_identity_required_dialog_positive_button">Get certificate</string>
     <string name="end_to_end_identity_required_dialog_snooze_button">Remind me later</string>
-    <string name="end_to_end_identity_snooze_dialog_text">You can get the certificate in your Wire Settings during the next %1$s.\nOpen Devices and select Get Certificate for your current device. </string>
+    <string name="end_to_end_identity_snooze_dialog_text">You can get the certificate in your Television Settings during the next %1$s.\nOpen Devices and select Get Certificate for your current device. </string>
     <string name="end_to_end_identity_renew_dialog_title">Update certificate</string>
     <string name="end_to_end_identity_renew_dialog_text">The end-to-end identity certificate for this device expires soon. To keep your communication secure, update your certificate now.\n\nEnter your identity provider\'s credentials in the next step to update the certificate automatically.</string>
     <string name="end_to_end_identity_renew_dialog_text_no_snooze">The end-to-end identity certificate for this device has expired.\n\nEnter your identity provider\'s credentials in the next step to update the certificate automatically.</string>
@@ -1340,7 +1340,7 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="record_audio_discard_dialog_text">The audio message will be deleted and can not be sent.</string>
     <string name="record_audio_discard_dialog_discard_button">Discard</string>
     <string name="record_audio_permission_denied_dialog_title">Microphone Access</string>
-    <string name="record_audio_permission_denied_dialog_text">Wire needs permission to use your microphone to record audio messages. Allow access in your device settings.</string>
+    <string name="record_audio_permission_denied_dialog_text">Television needs permission to use your microphone to record audio messages. Allow access in your device settings.</string>
     <string name="record_audio_permission_denied_dialog_settings_button">Settings</string>
     <string name="record_audio_max_file_size_reached_title">Recording Stopped</string>
     <string name="record_audio_max_file_size_reached_text">File size for audio messages is limited to %1$d MB.</string>
@@ -1368,7 +1368,7 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="conversation_options_create_password_protected_guest_link_password_generated">New password generated</string>
     <!--    biometrics-->
     <string name="biometrics_prompt_dialog_title">Authenticate with biometrics</string>
-    <string name="biometrics_prompt_dialog_subtitle">To unlock Wire</string>
+    <string name="biometrics_prompt_dialog_subtitle">To unlock Television</string>
     <string name="biometrics_use_passcode_button">Use passcode</string>
     <string name="biometrics_app_unlock_too_many_attempts">Too many attempts on biometrics. Unlock with passcode instead.</string>
     <!--    e2ei-->
@@ -1422,19 +1422,19 @@ In group conversations, the group admin can overwrite this setting.</string>
     <string name="app_permission_dialog_title">App permissions</string>
     <string name="app_permission_dialog_settings_positive_button">Settings</string>
     <string name="app_permission_dialog_settings_negative_button">Not Now</string>
-    <string name="notifications_permission_dialog_description">To make full use of the app, receive messages and answer phone calls, please allow Wire to show notifications.</string>
-    <string name="call_permission_dialog_description">To make a call, allow Wire to access your microphone in your device settings.</string>
-    <string name="record_video_permission_dialog_description">To record a video, allow Wire to access your camera in your device settings.</string>
-    <string name="take_picture_permission_dialog_description">To take a picture, allow Wire to access your camera in your device settings.</string>
-    <string name="open_gallery_permission_dialog_description">To send a picture, allow Wire to access Photos in your device settings.</string>
-    <string name="attach_file_permission_dialog_description">To send a file, allow Wire to access your files in your device settings.</string>
-    <string name="save_permission_dialog_description">To save this file, allow Wire to access your Downloads folder in your device settings.</string>
-    <string name="save_backup_file_permission_dialog_description">To save this backup file, allow Wire to access your Downloads folder in your device settings.</string>
-    <string name="restore_backup_permission_dialog_description">To restore conversations, allow Wire to access your files in your device settings.</string>
-    <string name="camera_permission_dialog_description">To turn the camera on, allow Wire to access your camera in your device settings.</string>
+    <string name="notifications_permission_dialog_description">To make full use of the app, receive messages and answer phone calls, please allow Television to show notifications.</string>
+    <string name="call_permission_dialog_description">To make a call, allow Television to access your microphone in your device settings.</string>
+    <string name="record_video_permission_dialog_description">To record a video, allow Television to access your camera in your device settings.</string>
+    <string name="take_picture_permission_dialog_description">To take a picture, allow Television to access your camera in your device settings.</string>
+    <string name="open_gallery_permission_dialog_description">To send a picture, allow Television to access Photos in your device settings.</string>
+    <string name="attach_file_permission_dialog_description">To send a file, allow Television to access your files in your device settings.</string>
+    <string name="save_permission_dialog_description">To save this file, allow Television to access your Downloads folder in your device settings.</string>
+    <string name="save_backup_file_permission_dialog_description">To save this backup file, allow Television to access your Downloads folder in your device settings.</string>
+    <string name="restore_backup_permission_dialog_description">To restore conversations, allow Television to access your files in your device settings.</string>
+    <string name="camera_permission_dialog_description">To turn the camera on, allow Television to access your camera in your device settings.</string>
     <!-- Share Location -->
     <string name="location_attachment_share_title">Share Location</string>
-    <string name="location_app_permission_dialog_body">Allow Wire to access your device location to send your location.</string>
+    <string name="location_app_permission_dialog_body">Allow Television to access your device location to send your location.</string>
     <string name="location_loading_label">Please wait...</string>
     <string name="location_could_not_be_shared">Location could not be shared</string>
     <!-- Asset Preview -->

@@ -108,7 +108,7 @@ fun PrivacySettingsScreenContent(
                 title = stringResource(R.string.settings_censor_screenshots),
                 switchState = when (screenshotCensoringConfig) {
                     ScreenshotCensoringConfig.DISABLED ->
-                        SwitchState.Enabled(value = false, onCheckedChange = setScreenshotCensoringConfig)
+                        SwitchState.Enabled(value = true, onCheckedChange = setScreenshotCensoringConfig)
 
                     ScreenshotCensoringConfig.ENABLED_BY_USER ->
                         SwitchState.Enabled(value = true, onCheckedChange = setScreenshotCensoringConfig)

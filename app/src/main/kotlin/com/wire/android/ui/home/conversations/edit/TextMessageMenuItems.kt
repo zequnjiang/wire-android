@@ -38,11 +38,11 @@ fun TextMessageEditMenuItems(
 ): List<@Composable () -> Unit> {
     return buildList {
         if (!isUploading) {
-            if (!isEphemeral && !isComposite) add { ReactionOption(onReactionClick) }
+            if (!isComposite) add { ReactionOption(onReactionClick) }
             add { MessageDetailsMenuOption(onDetailsClick) }
             onCopyClick?.also { add { CopyItemMenuOption(it) } }
-            if (!isEphemeral && !isComposite) add { ReplyMessageOption(onReplyClick) }
-            if (!isEphemeral && !isLocation && onEditClick != null) add { EditMessageMenuOption(onEditClick) }
+            if (!isComposite) add { ReplyMessageOption(onReplyClick) }
+            if (!isLocation && onEditClick != null) add { EditMessageMenuOption(onEditClick) }
         }
         add { DeleteItemMenuOption(onDeleteClick) }
     }

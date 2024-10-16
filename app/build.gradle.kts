@@ -67,6 +67,10 @@ android {
         val datadogAppIdKey = "DATADOG_APP_ID"
         val appId: String? = System.getenv(datadogAppIdKey) ?: project.getLocalProperty(datadogAppIdKey, null)
         buildConfigField("String", datadogAppIdKey, appId?.let { "\"$it\"" } ?: "null")
+        resourceConfigurations.addAll(listOf("en", "zh"))
+        ndk {
+            abiFilters.addAll(arrayOf("arm64-v8a","arm64-v8a"))
+        }
     }
     // Most of the configuration is done in the build-logic
     // through the Wire Application convention plugin

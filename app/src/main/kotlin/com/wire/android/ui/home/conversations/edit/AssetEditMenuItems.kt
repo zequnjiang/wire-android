@@ -45,6 +45,8 @@ fun assetEditMenuItems(
             }
 
             isEphemeral -> {
+                add { ReactionOption(onReactionClick) }
+                add { ReplyMessageOption(onReplyClick) }
                 if (messageOptionsEnabled) {
                     add { MessageDetailsMenuOption(onDetailsClick) }
                 }

@@ -190,7 +190,7 @@ private fun MainLoginContent(
                                 )
                             }
                         } else {
-                            scope.launch { pagerState.animateScrollToPage(it) }
+                            scope.launch { pagerState.animateScrollToPage(0) }
                         }
                     },
                     modifier = Modifier.padding(
@@ -216,7 +216,7 @@ private fun MainLoginContent(
             ) { pageIndex ->
                 when (LoginTabItem.values()[pageIndex]) {
                     LoginTabItem.EMAIL -> LoginEmailScreen(onSuccess, onRemoveDeviceNeeded, loginEmailViewModel, scrollState)
-                    LoginTabItem.SSO -> LoginSSOScreen(onSuccess, onRemoveDeviceNeeded, ssoLoginResult)
+                    LoginTabItem.SSO -> LoginEmailScreen(onSuccess, onRemoveDeviceNeeded, loginEmailViewModel, scrollState)
                 }
             }
             if (!pagerState.isScrollInProgress && focusedTabIndex != pagerState.currentPage) {

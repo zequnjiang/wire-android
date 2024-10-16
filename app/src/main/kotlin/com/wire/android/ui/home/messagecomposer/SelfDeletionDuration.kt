@@ -28,7 +28,7 @@ import kotlin.time.Duration.Companion.seconds
 
 @Suppress("MagicNumber")
 enum class SelfDeletionDuration(val value: Duration?, val longLabel: UIText, val shortLabel: UIText) {
-    None(null, UIText.StringResource(R.string.label_off), UIText.StringResource(R.string.label_off)),
+    None(1.days, UIText.StringResource(R.string.one_day_short_label), UIText.StringResource(R.string.one_day_short_label)),
     TenSeconds(
         10.seconds,
         UIText.PluralResource(R.plurals.seconds_long_label, 10, 10),

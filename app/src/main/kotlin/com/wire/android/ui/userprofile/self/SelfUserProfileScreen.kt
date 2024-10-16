@@ -280,7 +280,7 @@ private fun SelfUserProfileContent(
                         )
                     }
                 }
-                NewTeamButton(onAddAccountClick, isUserInCall, context)
+//                NewTeamButton(onAddAccountClick, isUserInCall, context)
             }
             ChangeStatusDialogContent(
                 data = statusDialogData,

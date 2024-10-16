@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "tv.kuainiu.io",
+  "variantName": "prodRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 100019118,
+      "versionName": "4.8.1-19118-prod",
+      "outputFile": "com.wire.android-v4.8.1-19118-prod-release.apk"
+    }
+  ],
+  "elementType": "File",
+  "baselineProfiles": [
+    {
+      "minApi": 28,
+      "maxApi": 30,
+      "baselineProfiles": [
+        "baselineProfiles/1/com.wire.android-v4.8.1-19118-prod-release.dm"
+      ]
+    },
+    {
+      "minApi": 31,
+      "maxApi": 2147483647,
+      "baselineProfiles": [
+        "baselineProfiles/0/com.wire.android-v4.8.1-19118-prod-release.dm"
+      ]
+    }
+  ],
+  "minSdkVersionForDexing": 26
+}
