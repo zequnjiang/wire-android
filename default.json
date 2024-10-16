@@ -1,15 +1,11 @@
 {
     "flavors": {
         "prod": {
-            "application_id": "com.wire",
             "developer_features_enabled": false,
             "logging_enabled": false,
             "application_is_private_build": false,
             "development_api_enabled": false,
             "mls_support_enabled": false,
-            "analytics_enabled": false,
-            "analytics_app_key": "4483f7a58ae3e70b3780319c4ccb5c88a037be49",
-            "analytics_server_url": "https://countly.wire.com/",
             "is_password_protected_guest_link_enabled": false
         },
         "dev": {
@@ -98,7 +94,6 @@
     "allow_account_creation": true,
     "max_accounts": 3,
     "enable_blacklist": true,
-    "allow_email_change": true,
     "enable_guest_room_link": true,
     "file_restriction_enabled": false,
     "file_restriction_list": "3gpp, aac, amr, avi, bmp, css, csv, dib, doc, docx, eml, flac, gif, html, ico, jfif, jpeg, jpg, jpg-large, key, m4a, m4v, md, midi, mkv, mov, mp3, mp4, mpeg, mpeg3, mpg, msg, ods, odt, ogg, pdf, pjp, pjpeg, png, pps, ppt, pptx, psd, pst, rtf, sql, svg, tex, tiff, txt, vcf, vid, wav, webm, webp, wmv, xls, xlsx, xml",
@@ -111,21 +106,13 @@
     "wipe_on_cookie_invalid": false,
     "wipe_on_device_removal": false,
     "wipe_on_rooted_device": false,
-    "websocket_enabled_by_default": false,
     "firebase_push_sender_id": "782078216207",
     "firebase_app_id": "1:782078216207:android:d3db2443512d2055",
     "google_api_key": "AIzaSyBXtNKuX6GCKv2jDtsFImUaxCRL21DTLEQ",
     "fcm_project_id": "w966768976",
     "report_bug_menu_item_enabled": true,
     "debug_screen_enabled": true,
-    "update_app_url": "https://wire.com/en/download/",
-    "default_backend_url_base_api": "https://prod-nginz-https.wire.com",
-    "default_backend_url_accounts": "https://account.wire.com",
-    "default_backend_url_base_websocket": "https://prod-nginz-ssl.wire.com",
-    "default_backend_url_teams": "https://teams.wire.com",
     "default_backend_url_blacklist": "https://clientblacklist.wire.com/prod",
-    "default_backend_url_website": "https://wire.com",
-    "default_backend_title": "wire-production",
     "cert_pinning_config": {
         "sha256/fnBeCwh0imI9t46Onid49IwvsB5vcf7RCvafRRdCyRE=": [
             "**.prod-nginz-https.wire.com",
@@ -135,7 +122,6 @@
         ]
     },
     "is_password_protected_guest_link_enabled": true,
-    "team_app_lock": false,
     "team_app_lock_timeout": 60,
     "max_remote_search_result_count": 30,
     "limit_team_members_fetch_during_slow_sync": 2000
